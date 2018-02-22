@@ -1,0 +1,55 @@
+{
+  "name": "react-elements-library",
+  "main": "index.js",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Florian Barbare",
+  "homepage": "https://github.com/fbarbare/react-elements-library#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fbarbare/react-elements-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fbarbare/react-elements-library/issues"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "dependencies": {
+    "color": "^3.0.0",
+    "moment": "^2.20.1",
+    "react-dates": "^16.3.0",
+    "react-icons": "^2.2.7"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.10.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.1.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^16.0.0",
+    "react-dom": "^0.14.0 || ^16.0.0",
+    "react-router-dom": "^4.0.0"
+  },
+  "prettier": {
+    "useTabs": false,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "jsxBracketSameLine": false,
+    "noSemi": false
+  },
+  "lint-staged": {
+    "{src}/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
+  }
+}
