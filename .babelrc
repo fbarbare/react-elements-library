@@ -1,0 +1,13 @@
+{
+  "presets": ["airbnb", "es2015", "react"],
+  "plugins": [
+    "transform-class-properties",
+    "transform-export-extensions",
+    ["transform-replace-object-assign", "object.assign"]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["istanbul"]
+    }
+  }
+}
