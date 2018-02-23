@@ -1,6 +1,6 @@
 {
   "name": "react-elements-library",
-  "main": "script.js",
+  "main": "lib/index.js",
   "version": "1.1.1",
   "description": "",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "url": "https://github.com/fbarbare/react-elements-library/issues"
   },
   "scripts": {
-    "prepublish": "babel src/elements -d lib/ && babel index.js --out-file script.js",
+    "prepublish": "babel index.js src/elements -d lib/",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
