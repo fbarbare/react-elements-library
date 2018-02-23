@@ -1,7 +1,9 @@
 import Box from './index';
 
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
+
+import { FaBeer } from 'react-icons/lib/fa';
 
 describe('Box component', () => {
   let props;
@@ -16,13 +18,13 @@ describe('Box component', () => {
   });
 
   it('renders its children', () => {
-    const renderedBox = shallow(<Box {...props}>{'some text'}</Box>);
+    const renderedBox = mount(<Box {...props}>{'some text'}</Box>);
 
     expect(renderedBox.contains('some text')).toEqual(true);
   });
 
   it('renders with the given background color', () => {
-    const renderedBox = shallow(<Box {...props} />);
+    const renderedBox = mount(<Box {...props} />);
 
     expect(renderedBox.props().style).toEqual({
       backgroundColor: 'red',
@@ -34,7 +36,7 @@ describe('Box component', () => {
 
   it('renders with a box shadow', () => {
     props.config.boxShadow = true;
-    const renderedBox = shallow(<Box {...props} />);
+    const renderedBox = mount(<Box {...props} />);
 
     expect(renderedBox.props().style).toEqual({
       backgroundColor: 'red',
@@ -46,7 +48,7 @@ describe('Box component', () => {
 
   it('can enforce the box shadow to show', () => {
     props.config.boxShadow = false;
-    const renderedBox = shallow(<Box {...props} boxShadow />);
+    const renderedBox = mount(<Box {...props} boxShadow />);
 
     expect(renderedBox.props().style).toEqual({
       backgroundColor: 'red',
@@ -58,7 +60,7 @@ describe('Box component', () => {
 
   it('can enforce the box shadow not toshow', () => {
     props.config.boxShadow = true;
-    const renderedBox = shallow(<Box {...props} boxShadow={false} />);
+    const renderedBox = mount(<Box {...props} boxShadow={false} />);
 
     expect(renderedBox.props().style).toEqual({
       backgroundColor: 'red',
@@ -70,7 +72,7 @@ describe('Box component', () => {
 
   it('disables the overflow', () => {
     props.overflow = false;
-    const renderedBox = shallow(<Box {...props} />);
+    const renderedBox = mount(<Box {...props} />);
 
     expect(renderedBox.props().style).toEqual({
       backgroundColor: 'red',
@@ -78,5 +80,19 @@ describe('Box component', () => {
       boxShadow: '',
       overflow: 'initial'
     });
+  });
+
+  it('adds a heading', () => {
+    props.headingText = 'My Title';
+    const renderedBox = mount(<Box {...props} />);
+
+    expect(renderedBox.text()).toEqual('My Title');
+  });
+
+  it('adds an icon to the heading', () => {
+    props.headingIcon = 'FaBeer';
+    const renderedBox = mount(<Box {...props} />);
+
+    expect(renderedBox.find(FaBeer).length).toEqual(1);
   });
 });
