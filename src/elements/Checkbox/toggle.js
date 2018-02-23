@@ -32,7 +32,7 @@ export default class Toggle extends PureComponent {
   };
 
   render() {
-    const { children, ...props } = this.props;
+    const { children, config, ...props } = this.props;
     const { checked, focused } = this.state;
 
     return (
