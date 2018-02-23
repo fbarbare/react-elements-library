@@ -1,7 +1,7 @@
 {
   "name": "react-elements-library",
   "main": "script.js",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "license": "MIT",
   "author": "Florian Barbare",
@@ -62,9 +62,6 @@
     "noSemi": false
   },
   "lint-staged": {
-    "{src}/**/*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
+    "{src}/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
   }
 }
