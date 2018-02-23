@@ -17,7 +17,7 @@ export default class Box extends PureComponent {
     const {
       children,
       config,
-      overflow = true,
+      overflow,
       boxShadow,
       headingText,
       headingIcon,
